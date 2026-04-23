@@ -1,76 +1,77 @@
 export const SITE_CONFIG = {
   brandTopic: "Adakami",
-  siteName: "Pusat Informasi Adakami",
-  tagline: "Panduan umum, literasi digital, dan keamanan online dalam satu tempat.",
+  siteName: "Panduan Informasi Adakami",
+  tagline:
+    "Kumpulan panduan ringkas, wawasan digital, dan FAQ bertema Adakami dalam format yang ringan, jelas, dan mudah dibaca.",
   description:
-    "Portal informasi independen bertema Adakami yang berfokus pada panduan umum, keamanan digital, FAQ, dan kontak pengelola situs.",
+    "Halaman informasi independen bertema Adakami yang memuat panduan umum, literasi digital, keamanan akses, dan FAQ untuk kebutuhan referensi singkat.",
   domain: "https://bantuan-pelanggan-adakami.asia",
   whatsappNumber: "0812909787",
   whatsappMessage:
-    "Halo admin, saya ingin bertanya tentang panduan umum di situs ini.",
-  contactLabel: "Hubungi Pengelola",
-  floatingButtonLabel: "Chat WhatsApp",
-  heroBadge: "Portal Informasi Independen",
-  primaryButtonText: "Buka WhatsApp",
-  secondaryButtonText: "Jelajahi Panduan",
+    "Halo admin, saya ingin bertanya tentang informasi umum di situs ini.",
+  contactLabel: "Kontak Pengelola",
+  floatingButtonLabel: "WhatsApp Pengelola",
+  heroBadge: "Panduan Independen",
+  primaryButtonText: "Hubungi via WhatsApp",
+  secondaryButtonText: "Lihat Isi Halaman",
   disclaimer:
-    "Situs ini bersifat independen dan hanya untuk informasi umum. Kata “Adakami” digunakan sebagai penanda topik pencarian publik dan bukan representasi resmi pihak mana pun.",
+    "Halaman ini disusun secara independen untuk kebutuhan informasi umum. Penyebutan kata “Adakami” digunakan sebagai penanda topik pencarian publik dan tidak dimaksudkan sebagai representasi resmi pihak mana pun.",
   highlights: [
-    "Fokus pada edukasi dan keamanan digital",
-    "Bukan halaman resmi, bukan representasi perusahaan",
-    "Kontak dikelola oleh pengelola situs secara independen",
+    "Konten informatif dengan bahasa yang netral",
+    "Tidak mewakili institusi, brand, atau layanan resmi",
+    "Dikelola secara independen untuk kebutuhan referensi umum",
   ],
   featureCards: [
     {
-      title: "Panduan Keamanan Akun",
-      text: "Langkah dasar untuk menjaga akses, sandi, dan perangkat tetap aman saat digunakan sehari-hari.",
+      title: "Panduan Keamanan Akses",
+      text: "Ringkasan langkah dasar untuk menjaga akses, kata sandi, dan perangkat tetap aman saat digunakan sehari-hari.",
       tag: "Keamanan",
     },
     {
-      title: "Cek Tautan & Kontak",
-      text: "Tips sederhana untuk membedakan tautan yang aman, domain yang sesuai, dan kontak yang layak dipercaya.",
-      tag: "Verifikasi",
+      title: "Validasi Tautan dan Kontak",
+      text: "Panduan singkat untuk menilai tautan, domain, dan jalur komunikasi agar lebih mudah dibedakan mana yang patut dipercaya.",
+      tag: "Validasi",
     },
     {
-      title: "Edukasi Anti Penipuan",
-      text: "Daftar kebiasaan yang membantu Anda mengurangi risiko salah klik, salah kirim, atau tertipu pesan palsu.",
-      tag: "Edukasi",
+      title: "Literasi Pesan dan Modus Palsu",
+      text: "Catatan dasar untuk membantu pembaca lebih waspada terhadap pola pesan mendesak, tautan aneh, dan ajakan yang meragukan.",
+      tag: "Literasi",
     },
     {
-      title: "FAQ Umum",
-      text: "Jawaban cepat untuk pertanyaan yang paling sering muncul saat mengakses informasi bertema Adakami.",
+      title: "Ringkasan Pertanyaan Umum",
+      text: "Kumpulan jawaban ringkas untuk pertanyaan yang paling sering muncul saat seseorang mencari informasi bertema Adakami.",
       tag: "FAQ",
     },
   ],
   articleCards: [
     {
-      title: "Cara mengenali halaman yang aman",
-      text: "Periksa domain, bahasa halaman, pola formulir, dan konsistensi identitas visual sebelum berinteraksi lebih jauh.",
+      title: "Cara menilai halaman yang layak dipercaya",
+      text: "Perhatikan domain, konsistensi bahasa, struktur halaman, dan kejelasan identitas sebelum mengikuti instruksi yang ada di dalamnya.",
     },
     {
-      title: "Jangan mudah membagikan kode rahasia",
-      text: "Kode OTP, PIN, dan tautan verifikasi sebaiknya tidak dibagikan kepada siapa pun, termasuk yang mengaku membantu.",
+      title: "Mengapa kode rahasia tidak boleh dibagikan",
+      text: "Kode OTP, PIN, dan tautan verifikasi sebaiknya tetap bersifat pribadi agar akses digital tidak mudah disalahgunakan.",
     },
     {
-      title: "Gunakan jalur komunikasi yang jelas",
-      text: "Simpan hanya kontak yang memang Anda percayai dan hindari menindaklanjuti pesan mendesak yang tidak jelas asalnya.",
+      title: "Pilih jalur komunikasi yang lebih jelas",
+      text: "Simpan hanya kontak yang benar-benar Anda kenal, dan hindari merespons pesan mendesak dari sumber yang tidak konsisten.",
     },
   ],
   faqs: [
     {
-      question: "Apakah situs ini halaman resmi?",
+      question: "Apakah halaman ini merupakan situs resmi?",
       answer:
-        "Tidak. Situs ini adalah portal informasi independen. Kata “Adakami” dipakai sebagai penanda topik agar halaman mudah dikenali.",
+        "Bukan. Halaman ini adalah media informasi independen. Kata “Adakami” digunakan sebagai penanda topik agar konteks pencarian lebih mudah dikenali.",
     },
     {
       question: "Apakah situs ini menyediakan transaksi atau layanan khusus?",
       answer:
-        "Tidak. Halaman ini hanya memuat panduan umum, materi edukasi, dan kanal kontak pengelola situs.",
+        "Tidak. Isi halaman difokuskan pada panduan umum, materi edukatif, dan kanal kontak pengelola situs.",
     },
     {
-      question: "Di mana saya mengubah nomor WhatsApp?",
+      question: "Di mana nomor WhatsApp bisa diubah?",
       answer:
-        "Nomor WhatsApp dan isi pesan otomatis dipusatkan di file src/config/site.js agar mudah diedit tanpa mengubah komponen lain.",
+        "Nomor WhatsApp dan isi pesan otomatis dipusatkan di file src/config/site.js agar mudah diperbarui tanpa menyunting banyak komponen.",
     },
   ],
 };
