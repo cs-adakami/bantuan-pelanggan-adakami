@@ -5,37 +5,37 @@ import { useCopyProtection } from "./hooks/useCopyProtection";
 const QUICK_POINTS = [
   {
     value: "Netral",
-    label: "Bahasa halaman diarahkan untuk informasi umum, bukan layanan khusus.",
+    label: "Pilihan bahasa diarahkan untuk informasi umum agar halaman tetap terasa ringan dan tidak berlebihan.",
   },
   {
-    value: "Mudah Edit",
-    label: "Nomor WhatsApp dan pesan otomatis cukup diubah dari satu file config.",
+    value: "Praktis",
+    label: "Nomor WhatsApp dan pesan otomatis dipusatkan di satu file agar proses edit lebih cepat.",
   },
   {
-    value: "Ringan",
-    label: "Struktur Vite + React dibuat agar pengembangan dan deploy tetap sederhana.",
+    value: "Rapi",
+    label: "Struktur Vite + React menjaga tampilan tetap modern sekaligus mudah dirawat saat konten berkembang.",
   },
 ];
 
 const EDITORIAL_POINTS = [
   {
-    title: "Bahasa dibuat aman",
-    text: "Konten dihindarkan dari istilah yang mudah menimbulkan kesan halaman resmi, transaksi, atau layanan finansial.",
+    title: "Nada bahasa lebih tenang",
+    text: "Copy diarahkan agar tetap informatif, tidak agresif, dan tidak membangun kesan sebagai halaman resmi atau halaman transaksi.",
   },
   {
-    title: "Topik tetap jelas",
-    text: "Kata Adakami tetap dipertahankan sebagai penanda topik publik agar pengunjung memahami konteks halaman.",
+    title: "Topik tetap mudah dikenali",
+    text: "Kata Adakami tetap hadir sebagai penanda tema sehingga konteks halaman masih jelas bagi pembaca yang datang dari pencarian publik.",
   },
   {
-    title: "Pengelolaan lebih cepat",
-    text: "Data utama dipisahkan dari tampilan sehingga perubahan nomor, pesan, dan copy bisa dilakukan tanpa bongkar komponen lain.",
+    title: "Lebih nyaman untuk dikelola",
+    text: "Informasi utama dipisahkan dari komponen tampilan agar perubahan nomor, pesan, dan naskah dapat dilakukan secara lebih efisien.",
   },
 ];
 
 const BUILD_NOTES = [
-  "Edit nomor dan pesan di src/config/site.js",
-  "Tampilan utama ada di src/App.jsx",
-  "Seluruh gaya visual ada di src/styles.css",
+  "Nomor dan pesan WhatsApp ada di src/config/site.js",
+  "Susunan halaman utama ada di src/App.jsx",
+  "Seluruh gaya visual tersimpan di src/styles.css",
 ];
 
 function App() {
@@ -83,7 +83,7 @@ function App() {
             <span className="brand__mark">A</span>
             <div>
               <strong>{SITE_CONFIG.siteName}</strong>
-              <span>Portal independen bertema {SITE_CONFIG.brandTopic}</span>
+              <span>Halaman referensi independen bertema {SITE_CONFIG.brandTopic}</span>
             </div>
           </a>
 
@@ -151,7 +151,7 @@ function App() {
               <a href={waLink} target="_blank" rel="noreferrer" className="contact-link">
                 {SITE_CONFIG.whatsappNumber}
               </a>
-              <p>Nomor dan pesan otomatis dapat diubah cepat dari satu file konfigurasi.</p>
+              <p>Nomor dan pesan otomatis dapat diperbarui cepat dari satu file konfigurasi.</p>
             </div>
 
             <div className="mini-card mini-card--note">
@@ -172,17 +172,17 @@ function App() {
 
         <section id="panduan" className="section section--split">
           <div className="section__head">
-            <span className="section__eyebrow">Panduan Utama</span>
-            <h2>Tampilan dibuat lebih rapi tanpa menghilangkan fleksibilitas edit</h2>
+            <span className="section__eyebrow">Struktur Konten</span>
+            <h2>Tampilan dirancang ringkas, elegan, dan mudah diperbarui</h2>
             <p>
-              Struktur halaman dipisah menjadi blok-blok yang jelas supaya lebih enak
-              dibaca, lebih modern, dan lebih aman secara positioning konten.
+              Setiap blok disusun agar informasi terasa lebih terarah, lebih nyaman
+              dibaca, dan tetap fleksibel saat Anda ingin mengganti isi halaman.
             </p>
           </div>
 
           <div className="section__side card build-panel">
             <span className="section__eyebrow">Pusat Edit</span>
-            <h3>Bagian yang paling sering Anda ubah</h3>
+            <h3>Bagian yang paling sering disesuaikan</h3>
             <ul className="build-list">
               {BUILD_NOTES.map((item) => (
                 <li key={item}>{item}</li>
@@ -204,10 +204,10 @@ function App() {
         <section id="edukasi" className="section">
           <div className="section__head">
             <span className="section__eyebrow">Arah Editorial</span>
-            <h2>Fondasi konten dibuat lebih matang dan lebih meyakinkan</h2>
+            <h2>Copy diarahkan agar tetap informatif, netral, dan nyaman dibaca</h2>
             <p>
-              Bagian ini memperjelas bahwa situs mengarah ke informasi umum,
-              edukasi, dan pengalaman baca yang bersih.
+              Pendekatan ini membantu halaman terasa lebih dewasa, lebih bersih,
+              dan lebih aman secara positioning di mata pengunjung.
             </p>
           </div>
 
@@ -225,7 +225,11 @@ function App() {
         <section className="section">
           <div className="section__head">
             <span className="section__eyebrow">Artikel Ringkas</span>
-            <h2>Materi pendukung untuk memperkaya nilai informasi halaman</h2>
+            <h2>Materi singkat untuk menambah nilai informasi halaman</h2>
+            <p>
+              Konten pendukung ini berfungsi sebagai penguat kualitas halaman tanpa
+              membuat tampilannya terasa penuh atau berlebihan.
+            </p>
           </div>
 
           <div className="grid grid--articles">
@@ -241,7 +245,11 @@ function App() {
         <section id="faq" className="section section--faq">
           <div className="section__head">
             <span className="section__eyebrow">FAQ</span>
-            <h2>Pertanyaan yang paling sering muncul</h2>
+            <h2>Pertanyaan umum seputar halaman ini</h2>
+            <p>
+              Bagian FAQ membantu pembaca memahami posisi halaman, fungsi konten,
+              dan titik pengaturan yang paling sering diubah.
+            </p>
           </div>
 
           <div className="faq-list">
@@ -257,10 +265,10 @@ function App() {
         <section className="card closing-card">
           <div>
             <span className="section__eyebrow">Kontak Cepat</span>
-            <h2>Butuh ganti nomor atau isi pesan WhatsApp?</h2>
+            <h2>Perlu menyesuaikan nomor atau pesan WhatsApp?</h2>
             <p>
-              Cukup edit <code>src/config/site.js</code>. Semua tombol WhatsApp di
-              halaman ini akan ikut menyesuaikan secara otomatis.
+              Cukup edit <code>src/config/site.js</code>. Seluruh tombol WhatsApp di
+              halaman ini akan menyesuaikan secara otomatis tanpa perlu ubah satu per satu.
             </p>
           </div>
 
@@ -292,7 +300,7 @@ function App() {
 
       <footer className="footer">
         <p>{SITE_CONFIG.disclaimer}</p>
-        <p>© 2026 {SITE_CONFIG.siteName}. Semua materi disusun untuk tujuan informasi umum.</p>
+        <p>© 2026 {SITE_CONFIG.siteName}. Seluruh isi disusun sebagai materi informasi umum.</p>
       </footer>
 
       {protectionNotice && <div className="protection-toast">{protectionNotice}</div>}
