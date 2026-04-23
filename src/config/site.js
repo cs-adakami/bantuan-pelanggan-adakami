@@ -61,7 +61,7 @@ export const SITE_CONFIG = {
     {
       question: "Apakah halaman ini merupakan situs resmi?",
       answer:
-        "Bukan. Halaman ini merupakan media informasi independen. Kata “Adakami” digunakan sebagai penanda topik agar konteks pencarian lebih mudah dikenali.",
+        "Halaman ini merupakan media informasi independen.“Adakami” digunakan sebagai penanda topik agar konteks pencarian lebih mudah dikenali.",
     },
     {
       question: "Apa fokus utama isi halaman ini?",
