@@ -4,29 +4,29 @@ import { useCopyProtection } from "./hooks/useCopyProtection";
 
 const HERO_NOTES = [
   {
-    title: "Bahasa netral",
-    text: "Naskah diarahkan untuk kebutuhan informasi umum dengan nada yang lebih tenang.",
+    title: "Ringkas",
+    text: "Informasi utama dirangkum secara padat agar lebih cepat dipahami.",
   },
   {
-    title: "Edit praktis",
-    text: "Nomor WhatsApp dan isi pesan otomatis dipusatkan di satu file konfigurasi.",
+    title: "Profesional",
+    text: "Bahasa yang digunakan jelas, terstruktur, dan tetap nyaman dibaca.",
   },
   {
-    title: "Struktur rapi",
-    text: "Tampilan dibangun agar mudah dirawat tanpa mengubah inti konten terlalu sering.",
+    title: "Mudah Diakses",
+    text: "Bagian penting disusun rapi agar pembaca menemukan informasi dengan lebih efisien.",
   },
 ];
 
 const EDITORIAL_NOTES = [
-  "Halaman diposisikan sebagai referensi independen, bukan kanal resmi atau representasi institusional.",
-  "Penyebutan kata Adakami dipertahankan sebagai penanda tema agar konteks pencarian tetap mudah dikenali.",
-  "Susunan visual dibuat lebih tenang agar halaman terasa dewasa, bersih, dan tidak berlebihan.",
+  "Konten difokuskan pada informasi umum, panduan praktis, dan referensi singkat yang relevan.",
+  "Susunan halaman dirancang agar tetap bersih, profesional, dan mudah dipahami di berbagai ukuran layar.",
+  "Jalur komunikasi dibuat sederhana melalui WhatsApp agar pengunjung dapat menghubungi pengelola dengan cepat.",
 ];
 
-const BUILD_NOTES = [
-  "Nomor dan pesan WhatsApp ada di src/config/site.js",
-  "Susunan halaman utama ada di src/App.jsx",
-  "Seluruh gaya visual tersimpan di src/styles.css",
+const KEY_POINTS = [
+  "Informasi umum yang disajikan secara ringkas dan terstruktur.",
+  "Pendekatan bahasa profesional untuk membantu keterbacaan.",
+  "Referensi singkat yang relevan untuk kebutuhan pembaca.",
 ];
 
 function WhatsAppIcon(props) {
@@ -72,7 +72,10 @@ function HeroVisual() {
 }
 
 function App() {
-  const waLink = useMemo(() => getWhatsAppLink(SITE_CONFIG.whatsappNumber, SITE_CONFIG.whatsappMessage), []);
+  const waLink = useMemo(
+    () => getWhatsAppLink(SITE_CONFIG.whatsappNumber, SITE_CONFIG.whatsappMessage),
+    []
+  );
   const protectionNotice = useCopyProtection();
 
   useEffect(() => {
@@ -146,8 +149,8 @@ function App() {
             <HeroVisual />
 
             <article className="surface panel panel--feature">
-              <span className="panel__label">Catatan Editorial</span>
-              <h2 className="panel__title">Arah tampilan dibuat lebih tenang dan lebih berkelas</h2>
+              <span className="panel__label">Tentang Halaman</span>
+              <h2 className="panel__title">Informasi disusun secara profesional, ringkas, dan mudah dipahami</h2>
               <p className="panel__copy">{SITE_CONFIG.description}</p>
               <ul className="panel__list">
                 {EDITORIAL_NOTES.map((item) => (
@@ -157,11 +160,13 @@ function App() {
             </article>
 
             <article className="surface panel">
-              <span className="panel__label">{SITE_CONFIG.contactLabel}</span>
+              <span className="panel__label">Layanan Informasi</span>
               <a href={waLink} target="_blank" rel="noreferrer" className="contact-link">
                 {SITE_CONFIG.whatsappNumber}
               </a>
-              <p className="panel__copy">Nomor dan pesan otomatis dapat diperbarui cepat dari satu titik konfigurasi.</p>
+              <p className="panel__copy">
+                Hubungi pengelola melalui WhatsApp untuk memperoleh informasi tambahan secara langsung.
+              </p>
             </article>
           </aside>
         </section>
@@ -177,16 +182,19 @@ function App() {
 
         <section id="panduan" className="section section--split">
           <div className="section__heading">
-            <span className="eyebrow">Struktur Konten</span>
-            <h2 className="section__title">Tampilan final diarahkan ke komposisi yang lebih lapang dan presisi</h2>
-            <p className="section__lead">Fokus utamanya adalah keterbacaan, ritme visual yang rapi, dan nuansa yang tidak terasa seperti template generik.</p>
+            <span className="eyebrow">Keunggulan Halaman</span>
+            <h2 className="section__title">Informasi penting disusun rapi untuk memudahkan pembaca</h2>
+            <p className="section__lead">
+              Setiap bagian dirancang agar lebih mudah dibaca, lebih terarah, dan tetap relevan
+              untuk kebutuhan informasi umum.
+            </p>
           </div>
 
           <aside className="surface side-card">
-            <span className="panel__label">Pusat Edit</span>
-            <h3 className="side-card__title">Bagian yang paling sering diubah</h3>
+            <span className="panel__label">Nilai Utama</span>
+            <h3 className="side-card__title">Pendekatan isi yang lebih jelas dan profesional</h3>
             <ul className="panel__list panel__list--compact">
-              {BUILD_NOTES.map((item) => (
+              {KEY_POINTS.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -206,8 +214,10 @@ function App() {
         <section id="wawasan" className="section">
           <div className="section__heading section__heading--narrow">
             <span className="eyebrow">Wawasan Ringkas</span>
-            <h2 className="section__title">Materi pendukung disusun singkat agar tetap terasa ringan</h2>
-            <p className="section__lead">Setiap blok isi dibuat padat, bersih, dan cukup informatif tanpa membuat halaman tampak terlalu penuh.</p>
+            <h2 className="section__title">Materi pendukung yang relevan untuk kebutuhan pembaca</h2>
+            <p className="section__lead">
+              Konten tambahan disusun secara singkat agar tetap informatif, ringan, dan mudah ditelaah.
+            </p>
           </div>
 
           <div className="card-grid card-grid--articles">
@@ -224,7 +234,9 @@ function App() {
           <div className="section__heading section__heading--narrow">
             <span className="eyebrow">FAQ</span>
             <h2 className="section__title">Pertanyaan umum seputar halaman ini</h2>
-            <p className="section__lead">Bagian ini memperjelas posisi halaman, fungsi isi, dan lokasi pengaturan yang paling sering disesuaikan.</p>
+            <p className="section__lead">
+              Bagian ini membantu pembaca memahami fokus halaman dan cara memperoleh informasi lanjutan.
+            </p>
           </div>
 
           <div className="faq-list">
@@ -239,9 +251,11 @@ function App() {
 
         <section className="closing surface">
           <div className="closing__content">
-            <span className="eyebrow">Kontak Cepat</span>
-            <h2 className="section__title">Perlu menyesuaikan nomor atau pesan WhatsApp?</h2>
-            <p className="section__lead">Edit <code>src/config/site.js</code>. Seluruh tombol WhatsApp di halaman ini akan menyesuaikan otomatis tanpa perlu diperbarui satu per satu.</p>
+            <span className="eyebrow">Hubungi Kami</span>
+            <h2 className="section__title">Butuh informasi tambahan?</h2>
+            <p className="section__lead">
+              Silakan hubungi pengelola melalui WhatsApp untuk memperoleh penjelasan lebih lanjut.
+            </p>
           </div>
 
           <div className="closing__actions">
