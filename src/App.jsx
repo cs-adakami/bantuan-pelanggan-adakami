@@ -1,33 +1,7 @@
 import { useEffect, useMemo } from "react";
+import logoAdakami from "../adakamiR.png";
 import { SITE_CONFIG, getWhatsAppLink } from "./config/site";
 import { useCopyProtection } from "./hooks/useCopyProtection";
-
-const HERO_NOTES = [
-  {
-    title: "Ringkas",
-    text: "Informasi utama dirangkum secara padat agar lebih cepat dipahami.",
-  },
-  {
-    title: "Profesional",
-    text: "Bahasa yang digunakan jelas, terstruktur, dan tetap nyaman dibaca.",
-  },
-  {
-    title: "Mudah Diakses",
-    text: "Bagian penting disusun rapi agar pembaca menemukan informasi dengan lebih efisien.",
-  },
-];
-
-const EDITORIAL_NOTES = [
-  "Konten difokuskan pada informasi umum, panduan praktis, dan referensi singkat yang relevan.",
-  "Susunan halaman dirancang agar tetap bersih, profesional, dan mudah dipahami di berbagai ukuran layar.",
-  "Jalur komunikasi dibuat sederhana melalui WhatsApp agar pengunjung dapat menghubungi pengelola dengan cepat.",
-];
-
-const KEY_POINTS = [
-  "Informasi umum yang disajikan secara ringkas dan terstruktur.",
-  "Pendekatan bahasa profesional untuk membantu keterbacaan.",
-  "Referensi singkat yang relevan untuk kebutuhan pembaca.",
-];
 
 function WhatsAppIcon(props) {
   return (
@@ -38,36 +12,42 @@ function WhatsAppIcon(props) {
   );
 }
 
-function HeroVisual() {
-  return (
-    <div className="hero-media" aria-hidden="true">
-      <div className="hero-media__glow" />
-      <svg viewBox="0 0 640 420" className="hero-media__svg">
-        <defs>
-          <linearGradient id="heroGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#eef5f0" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="#9bc7b0" stopOpacity="0.75" />
-          </linearGradient>
-          <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#d9efe1" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#d9efe1" stopOpacity="0.04" />
-          </linearGradient>
-        </defs>
-        <rect x="44" y="40" width="552" height="340" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" />
-        <rect x="82" y="82" width="220" height="24" rx="12" fill="url(#heroGlow)" opacity="0.9" />
-        <rect x="82" y="126" width="340" height="12" rx="6" fill="url(#heroLine)" />
-        <rect x="82" y="150" width="300" height="12" rx="6" fill="url(#heroLine)" />
-        <rect x="82" y="174" width="250" height="12" rx="6" fill="url(#heroLine)" />
-        <rect x="82" y="232" width="156" height="44" rx="22" fill="url(#heroGlow)" />
-        <rect x="252" y="232" width="130" height="44" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
-        <rect x="424" y="86" width="122" height="122" rx="28" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-        <circle cx="485" cy="147" r="34" fill="url(#heroGlow)" opacity="0.88" />
-        <circle cx="485" cy="147" r="16" fill="rgba(9,17,14,0.82)" />
-        <rect x="82" y="308" width="154" height="30" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
-        <rect x="252" y="308" width="154" height="30" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
-        <rect x="422" y="308" width="124" height="30" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
+function CardIcon({ type }) {
+  if (type === "Keamanan") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4Z" />
       </svg>
-    </div>
+    );
+  }
+
+  if (type === "Verifikasi") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
+    );
+  }
+
+  if (type === "Literasi") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M9 11H7a2 2 0 0 0-2 2v6" />
+      <path d="M13 3h6v6" />
+      <path d="m21 3-7 7" />
+      <path d="M3 7h6" />
+      <path d="M3 11h6" />
+      <path d="M3 15h4" />
+    </svg>
   );
 }
 
@@ -102,16 +82,16 @@ function App() {
       <main className="shell">
         <header className="masthead surface">
           <a className="brand" href="#atas" aria-label={SITE_CONFIG.siteName}>
-            <span className="brand__mark">A</span>
+            <img className="brand__logo" src={logoAdakami} alt="Logo Adakami" />
             <div className="brand__text">
               <strong>{SITE_CONFIG.siteName}</strong>
-              <span>Referensi independen bertema {SITE_CONFIG.brandTopic}</span>
+              <span>Informasi umum dan panduan digital</span>
             </div>
           </a>
 
           <nav className="masthead__nav" aria-label="Navigasi utama">
-            <a href="#panduan">Panduan</a>
-            <a href="#wawasan">Wawasan</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#informasi">Informasi</a>
             <a href="#faq">FAQ</a>
           </nav>
 
@@ -120,152 +100,89 @@ function App() {
           </a>
         </header>
 
-        <section id="atas" className="hero surface">
-          <div className="hero__main">
-            <span className="eyebrow">{SITE_CONFIG.heroBadge}</span>
-            <h1 className="hero__title">{SITE_CONFIG.siteName}</h1>
-            <p className="hero__lead">{SITE_CONFIG.tagline}</p>
+        <section id="atas" className="hero-banner surface">
+          <div className="hero-banner__overlay">
+            <h1>{SITE_CONFIG.siteName}</h1>
+            <p>{SITE_CONFIG.tagline}</p>
+          </div>
+        </section>
 
-            <div className="hero__actions">
-              <a className="button button--primary" href={waLink} target="_blank" rel="noreferrer">
+        <section className="content-layout">
+          <div className="content-main">
+            <article className="welcome-card surface">
+              <div className="welcome-card__head">
+                <div className="welcome-card__logo-box">
+                  <img src={logoAdakami} alt="Logo Adakami" className="welcome-card__logo" />
+                </div>
+                <div>
+                  <h2>Selamat datang di {SITE_CONFIG.siteName}</h2>
+                  <p>
+                    Halaman ini dirancang untuk menyajikan informasi umum, panduan praktis,
+                    dan referensi singkat dengan bahasa yang lebih profesional dan mudah dipahami.
+                  </p>
+                </div>
+              </div>
+
+              <a className="button button--primary button--full" href={waLink} target="_blank" rel="noreferrer">
                 {SITE_CONFIG.primaryButtonText}
               </a>
-              <a className="button button--ghost" href="#panduan">
-                {SITE_CONFIG.secondaryButtonText}
-              </a>
-            </div>
+            </article>
 
-            <div className="hero__notes">
-              {HERO_NOTES.map((item) => (
-                <article className="hero-note" key={item.title}>
-                  <strong>{item.title}</strong>
-                  <p>{item.text}</p>
-                </article>
+            <section id="layanan" className="service-list">
+              {SITE_CONFIG.featureCards.map((card) => (
+                <a key={card.title} href={waLink} target="_blank" rel="noreferrer" className="service-item surface">
+                  <span className="service-item__icon">
+                    <CardIcon type={card.tag} />
+                  </span>
+                  <div className="service-item__body">
+                    <strong>{card.title}</strong>
+                    <p>{card.text}</p>
+                  </div>
+                </a>
               ))}
-            </div>
+            </section>
           </div>
 
-          <aside className="hero__side">
-            <HeroVisual />
+          <aside id="informasi" className="content-side">
+            <article className="info-card surface">
+              <span className="info-card__label">Layanan Informasi</span>
+              <h3>Komunikasi yang ringkas, jelas, dan mudah diakses</h3>
+              <p>{SITE_CONFIG.description}</p>
+            </article>
 
-            <article className="surface panel panel--feature">
-              <span className="panel__label">Tentang Halaman</span>
-              <h2 className="panel__title">Informasi disusun secara profesional, ringkas, dan mudah dipahami</h2>
-              <p className="panel__copy">{SITE_CONFIG.description}</p>
-              <ul className="panel__list">
-                {EDITORIAL_NOTES.map((item) => (
+            <article className="info-card surface">
+              <span className="info-card__label">Tentang Halaman</span>
+              <ul className="info-card__list">
+                {SITE_CONFIG.highlights.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </article>
 
-            <article className="surface panel">
-              <span className="panel__label">Layanan Informasi</span>
-              <a href={waLink} target="_blank" rel="noreferrer" className="contact-link">
+            <article className="contact-card surface">
+              <span className="info-card__label">Kontak</span>
+              <img src={logoAdakami} alt="Logo Adakami" className="contact-card__logo" />
+              <a href={waLink} target="_blank" rel="noreferrer" className="contact-card__number">
                 {SITE_CONFIG.whatsappNumber}
               </a>
-              <p className="panel__copy">
-                Hubungi pengelola melalui WhatsApp untuk memperoleh informasi tambahan secara langsung.
+              <p>
+                Hubungi pengelola melalui WhatsApp untuk memperoleh penjelasan tambahan
+                mengenai informasi yang tersedia pada halaman ini.
               </p>
             </article>
-          </aside>
-        </section>
 
-        <section className="statement-grid">
-          {SITE_CONFIG.highlights.map((item) => (
-            <article className="surface statement" key={item}>
-              <span className="statement__icon">•</span>
-              <p>{item}</p>
+            <article id="faq" className="info-card surface">
+              <span className="info-card__label">FAQ</span>
+              <div className="faq-stack">
+                {SITE_CONFIG.faqs.map((faq) => (
+                  <details key={faq.question} className="faq-item">
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
             </article>
-          ))}
-        </section>
-
-        <section id="panduan" className="section section--split">
-          <div className="section__heading">
-            <span className="eyebrow">Keunggulan Halaman</span>
-            <h2 className="section__title">Informasi penting disusun rapi untuk memudahkan pembaca</h2>
-            <p className="section__lead">
-              Setiap bagian dirancang agar lebih mudah dibaca, lebih terarah, dan tetap relevan
-              untuk kebutuhan informasi umum.
-            </p>
-          </div>
-
-          <aside className="surface side-card">
-            <span className="panel__label">Nilai Utama</span>
-            <h3 className="side-card__title">Pendekatan isi yang lebih jelas dan profesional</h3>
-            <ul className="panel__list panel__list--compact">
-              {KEY_POINTS.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
           </aside>
-        </section>
-
-        <section className="card-grid card-grid--features">
-          {SITE_CONFIG.featureCards.map((card) => (
-            <article className="surface content-card" key={card.title}>
-              <span className="content-card__tag">{card.tag}</span>
-              <h3>{card.title}</h3>
-              <p>{card.text}</p>
-            </article>
-          ))}
-        </section>
-
-        <section id="wawasan" className="section">
-          <div className="section__heading section__heading--narrow">
-            <span className="eyebrow">Wawasan Ringkas</span>
-            <h2 className="section__title">Materi pendukung yang relevan untuk kebutuhan pembaca</h2>
-            <p className="section__lead">
-              Konten tambahan disusun secara singkat agar tetap informatif, ringan, dan mudah ditelaah.
-            </p>
-          </div>
-
-          <div className="card-grid card-grid--articles">
-            {SITE_CONFIG.articleCards.map((article) => (
-              <article className="surface article-card" key={article.title}>
-                <h3>{article.title}</h3>
-                <p>{article.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="faq" className="section">
-          <div className="section__heading section__heading--narrow">
-            <span className="eyebrow">FAQ</span>
-            <h2 className="section__title">Pertanyaan umum seputar halaman ini</h2>
-            <p className="section__lead">
-              Bagian ini membantu pembaca memahami fokus halaman dan cara memperoleh informasi lanjutan.
-            </p>
-          </div>
-
-          <div className="faq-list">
-            {SITE_CONFIG.faqs.map((faq) => (
-              <details className="surface faq-item" key={faq.question}>
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="closing surface">
-          <div className="closing__content">
-            <span className="eyebrow">Hubungi Kami</span>
-            <h2 className="section__title">Butuh informasi tambahan?</h2>
-            <p className="section__lead">
-              Silakan hubungi pengelola melalui WhatsApp untuk memperoleh penjelasan lebih lanjut.
-            </p>
-          </div>
-
-          <div className="closing__actions">
-            <a className="button button--primary" href={waLink} target="_blank" rel="noreferrer">
-              {SITE_CONFIG.floatingButtonLabel}
-            </a>
-            <a className="button button--ghost" href="#atas">
-              Kembali ke Atas
-            </a>
-          </div>
         </section>
       </main>
 
