@@ -95,13 +95,14 @@ function App() {
             <a href="#faq">FAQ</a>
           </nav>
 
-          <a className="button button--soft" href={waLink} target="_blank" rel="noreferrer">
+          <a className="button button--soft masthead__cta" href={waLink} target="_blank" rel="noreferrer">
             {SITE_CONFIG.contactLabel}
           </a>
         </header>
 
         <section id="atas" className="hero-banner surface">
           <div className="hero-banner__overlay">
+            <span className="hero-banner__eyebrow">{SITE_CONFIG.heroBadge}</span>
             <h1>{SITE_CONFIG.siteName}</h1>
             <p>{SITE_CONFIG.tagline}</p>
           </div>
@@ -114,23 +115,34 @@ function App() {
                 <div className="welcome-card__logo-box">
                   <img src={logoAdakami} alt="Logo Adakami" className="welcome-card__logo" />
                 </div>
-                <div>
+                <div className="welcome-card__copy">
                   <h2>Selamat datang di {SITE_CONFIG.siteName}</h2>
                   <p>
-                    Halaman ini dirancang untuk menyajikan informasi umum, panduan praktis,
-                    dan referensi singkat dengan bahasa yang lebih profesional dan mudah dipahami.
+                    Halaman ini menyajikan informasi umum, panduan praktis, dan referensi singkat
+                    dengan susunan yang lebih rapi, bahasa yang jelas, serta tampilan yang nyaman dibaca.
                   </p>
                 </div>
               </div>
 
-              <a className="button button--primary button--full" href={waLink} target="_blank" rel="noreferrer">
-                {SITE_CONFIG.primaryButtonText}
-              </a>
+              <div className="welcome-card__actions">
+                <a className="button button--primary" href={waLink} target="_blank" rel="noreferrer">
+                  {SITE_CONFIG.primaryButtonText}
+                </a>
+                <a className="button button--ghost" href="#faq">
+                  Lihat FAQ
+                </a>
+              </div>
             </article>
 
             <section id="layanan" className="service-list">
               {SITE_CONFIG.featureCards.map((card) => (
-                <a key={card.title} href={waLink} target="_blank" rel="noreferrer" className="service-item surface">
+                <a
+                  key={card.title}
+                  href={waLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="service-item surface"
+                >
                   <span className="service-item__icon">
                     <CardIcon type={card.tag} />
                   </span>
@@ -145,8 +157,8 @@ function App() {
 
           <aside id="informasi" className="content-side">
             <article className="info-card surface">
-              <span className="info-card__label">Layanan Informasi</span>
-              <h3>Komunikasi yang ringkas, jelas, dan mudah diakses</h3>
+              <span className="info-card__label">Ringkasan</span>
+              <h3>Informasi disusun lebih jelas dan mudah dipahami</h3>
               <p>{SITE_CONFIG.description}</p>
             </article>
 
@@ -161,10 +173,19 @@ function App() {
 
             <article className="contact-card surface">
               <span className="info-card__label">Kontak</span>
-              <img src={logoAdakami} alt="Logo Adakami" className="contact-card__logo" />
-              <a href={waLink} target="_blank" rel="noreferrer" className="contact-card__number">
-                {SITE_CONFIG.whatsappNumber}
-              </a>
+              <div className="contact-card__row">
+                <div className="contact-card__identity">
+                  <img src={logoAdakami} alt="Logo Adakami" className="contact-card__logo" />
+                  <div>
+                    <strong>{SITE_CONFIG.contactLabel}</strong>
+                    <span>WhatsApp aktif</span>
+                  </div>
+                </div>
+
+                <a href={waLink} target="_blank" rel="noreferrer" className="contact-card__number">
+                  {SITE_CONFIG.whatsappNumber}
+                </a>
+              </div>
               <p>
                 Hubungi pengelola melalui WhatsApp untuk memperoleh penjelasan tambahan
                 mengenai informasi yang tersedia pada halaman ini.
