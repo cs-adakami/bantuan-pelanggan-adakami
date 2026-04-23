@@ -51,6 +51,40 @@ function CardIcon({ type }) {
   );
 }
 
+function OperatorIllustration() {
+  return (
+    <div className="operator-figure" aria-hidden="true">
+      <div className="operator-figure__badge">Customer Care</div>
+      <svg viewBox="0 0 420 340" className="operator-figure__svg">
+        <defs>
+          <linearGradient id="opBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#dff8e8" />
+            <stop offset="100%" stopColor="#a4e3bb" />
+          </linearGradient>
+          <linearGradient id="opShirt" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#58c884" />
+            <stop offset="100%" stopColor="#2ea966" />
+          </linearGradient>
+        </defs>
+        <circle cx="310" cy="78" r="36" fill="rgba(255,255,255,0.34)" />
+        <circle cx="102" cy="62" r="24" fill="rgba(255,255,255,0.28)" />
+        <rect x="80" y="50" width="260" height="240" rx="42" fill="url(#opBg)" />
+        <circle cx="210" cy="122" r="54" fill="#ffd7c2" />
+        <path d="M160 112c10-34 80-44 110 0v24h-8c-12-10-20-18-52-18-28 0-40 8-50 18h-10Z" fill="#295743" />
+        <rect x="158" y="170" width="104" height="26" rx="12" fill="#ffd1ba" />
+        <path d="M126 302c6-58 36-92 84-92s78 34 84 92Z" fill="url(#opShirt)" />
+        <rect x="122" y="210" width="28" height="70" rx="14" fill="url(#opShirt)" />
+        <rect x="270" y="210" width="28" height="70" rx="14" fill="url(#opShirt)" />
+        <rect x="130" y="110" width="26" height="70" rx="13" fill="none" stroke="#23503c" strokeWidth="10" />
+        <rect x="264" y="110" width="26" height="70" rx="13" fill="none" stroke="#23503c" strokeWidth="10" />
+        <path d="M154 114c18-24 94-24 112 0" fill="none" stroke="#23503c" strokeWidth="10" strokeLinecap="round" />
+        <rect x="258" y="150" width="18" height="30" rx="9" fill="#23503c" />
+        <rect x="108" y="250" width="204" height="18" rx="9" fill="rgba(255,255,255,0.52)" />
+      </svg>
+    </div>
+  );
+}
+
 function App() {
   const waLink = useMemo(
     () => getWhatsAppLink(SITE_CONFIG.whatsappNumber, SITE_CONFIG.whatsappMessage),
@@ -105,6 +139,9 @@ function App() {
             <span className="hero-banner__eyebrow">{SITE_CONFIG.heroBadge}</span>
             <h1>{SITE_CONFIG.siteName}</h1>
             <p>{SITE_CONFIG.tagline}</p>
+          </div>
+          <div className="hero-banner__art">
+            <OperatorIllustration />
           </div>
         </section>
 
