@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import logoAdakami from "../adakamiR.png";
 import { SITE_CONFIG, getWhatsAppLink } from "./config/site";
 import { useCopyProtection } from "./hooks/useCopyProtection";
@@ -231,6 +232,8 @@ function App() {
       </footer>
 
       {protectionNotice && <div className="protection-toast">{protectionNotice}</div>}
+      
+      <SpeedInsights />
     </>
   );
 }
