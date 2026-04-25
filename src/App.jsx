@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import logoAdakami from "../adakamiR.png";
 import { SITE_CONFIG, getWhatsAppLink } from "./config/site";
 import { useCopyProtection } from "./hooks/useCopyProtection";
@@ -82,6 +83,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <main className="shell">
         <header className="masthead surface">
           <a className="brand" href="#atas" aria-label={SITE_CONFIG.siteName}>
